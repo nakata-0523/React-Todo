@@ -1,24 +1,32 @@
 import React, {Component} from 'react';
 
-class App extends Component {
-  render() {
+// class App extends Component {
+//   render() {
 
-    //return内は一つだけにしないといけないのでタグで囲って一つの塊にする
-    return (
-      <React.Fragment>
-        <label htmlFor="bar">bar</label>
-        <input type="text" onChange={() => {console.log("I am Changed")}} />
-      </React.Fragment>
-    )
-  }
+//     //return内は一つだけにしないといけないのでタグで囲って一つの塊にする
+//     return (
+//       <React.Fragment>
+//         <label htmlFor="bar">bar</label>
+//         <input type="text" onChange={() => {console.log("I am Changed")}} />
+//       </React.Fragment>
+//     )
+//   }
+// }
+
+const App = () => {
+  return (
+    <div>
+      <Cat />
+      <Cat />
+      <Cat />
+      <Cat />
+      <Cat />
+    </div>
+  )
 }
 
-// function App() {
-//   return(
-//     <React.Fragment>
-//       <label htmlFor="forname">bar</label>
-//       <input type="text" onChange={() => {console.log("I am clicked.")}} />
-//     </React.Fragment>
-//   )
-// }
+const Cat = () => {
+  return <div>Meow!</div>
+}
+
 export default App;
