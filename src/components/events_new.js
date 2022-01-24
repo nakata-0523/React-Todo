@@ -28,7 +28,7 @@ class EventsNew extends Component {
     }
 
     render () {
-        const { handleSubmit, pristine, submitting } = this.props   //pristine フォームに値を入力しないとボタンが押せないようにする  submitting ボタンを押したらtrueを返す
+        const { handleSubmit, pristine, submitting, invalid } = this.props   //pristine フォームに値を入力しないとボタンが押せないようにする  submitting ボタンを押したらtrueを返す invalid バリデーションエラーがある時ボタンが押せないようにする
 
         return (
             <form onSubmit={ handleSubmit(this.onSubmit) }>
@@ -36,7 +36,7 @@ class EventsNew extends Component {
                 <div><Field label="Body" name="body" type="text" component={ this.renderField } /></div>
 
                 <div>
-                    <input type="submit" value="Submit" disabled={ pristine || submitting } />    {/* pristine フォームに値を入力しないとボタンが押せないようにする。　submittingでボタンを複数回連続で押せないようにする */}
+                    <input type="submit" value="Submit" disabled={ pristine || submitting || invalid } />    {/* pristine フォームに値を入力しないとボタンが押せないようにする。　submittingでボタンを複数回連続で押せないようにする invalid バリデーションエラーがある時ボタンが押せないようにする */}
                     <Link to="/">Cancel</Link>
                 </div>
             </form>
