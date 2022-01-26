@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk'  //関数を返すことができるようになる
 import { BrowserRouter, Route, Switch } from 'react-router-dom'  //リンクの機能
 import { composeWithDevTools } from 'redux-devtools-extension'　//デバッグしやすくするためのパッケージ
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';  //デザインのためのパッケージ　このファイルではMuiThemeProviderタグで囲むだけ23行目、34行目 https://mui.com/components/tables/で使い方がわかる
 
 import './index.css';
 import EventsIndex from './components/events_index';
@@ -19,7 +20,8 @@ const enhancer = process.env.NODE_ENV === 'development' ?
 const store = createStore(reducer, enhancer)
 
 ReactDOM.render(
-  <Provider store={ store }>
+  <MuiThemeProvider>
+    <Provider store={ store }>
     <BrowserRouter>
       <Switch>
         <Route path="/events/new" component={ EventsNew } />
@@ -28,7 +30,8 @@ ReactDOM.render(
         <Route exact path="/events" component={ EventsIndex } />
       </Switch>
     </BrowserRouter>
-  </Provider>,
+    </Provider>
+  </MuiThemeProvider>,
   document.getElementById('root')
 );
 
