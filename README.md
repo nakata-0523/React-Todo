@@ -1,1 +1,6 @@
-# udemy-react-redux-crud-application
+# react-todo
+* Reactを使用してTodoアプリをSPAで作成
+
+* 投稿の新規作成、更新、削除が可能
+* 更新の際、内容の変更がないとsubmitボタンを押せないようにしている
+* 外部のサーバーと接続している
